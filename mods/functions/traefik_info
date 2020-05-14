@@ -5,7 +5,7 @@ traefik_info () {
 traefik_menu_start_setup
 # VARIABLES ####################################################################
 pgrole="traefik"
-image="traefik:1.7"
+image="traefik:latest"
 port_inside01="80"; port_outside01="80"
 port_inside02="443"; port_outside02="443"
 
@@ -27,7 +27,7 @@ rm -rf /pg/data/traefik/acme/acme.json
 # TRAEFIK.TOML #################################################################
 cat <<- EOF > "/pg/data/traefik/traefik.toml"
 insecureskipverify = true
-logLevel = "WARN"
+logLevel = "info"
 defaultEntryPoints = ["http", "https"]
 
 [entryPoints]
@@ -84,10 +84,11 @@ $container_header
           PROVIDER: '$provider'
           $pfillin
         volumes:
-          - '/pg/data/traefik/traefik.toml:/etc/traefik/traefik.toml:ro'
+          - '/pg/data/traefik/traefik.yml:/etc/traefik/traefik.yml:ro'
           - '/etc/localtime:/etc/localtime:ro'
           - '/pg/data/traefik/acme:/etc/traefik/acme'
           - '/var/run/docker.sock:/var/run/docker.sock:ro'
+          - '/pg/data/traefik/config.yml:/etc/traefik/config.yml
         state: started
         restart_policy: unless-stopped
         networks:
