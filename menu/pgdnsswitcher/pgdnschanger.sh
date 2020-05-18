@@ -77,7 +77,7 @@ elif [ "$typed" == "6" ]; then
 	sed -i '/nameserver/s/^#*/#/g' /etc/resolv.conf
 	sed -i '$a\nameserver 8.26.56.26\' /etc/resolv.conf
 	sed -i '$a\nameserver 8.20.247.20\' /etc/resolv.conf		
-elif [ "$typed" == "Z" ] || [ "$typed" == "z" ]; then
+elif [ "$typed" == "7" ] || [ "$typed" == "z" ]; then
 	sed -i '/nameserver/s/^#*/#/g' /etc/resolv.conf
 	sed -i '$a\nameserver 192.168.75.1\' /etc/resolv.conf		
 elif [ "$typed" == "Z" ] || [ "$typed" == "z" ]; then

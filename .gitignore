@@ -3,3 +3,11 @@ plexguide.retry
 .idea
 johnkennyuk
 johnkennyuk.pub
+.ssh/config
+.ssh/google_compute_engine.pub
+.ssh/google_compute_known_hosts
+.ssh/known_hosts
+.ssh/.ssh/config
+.ssh/.ssh/google_compute_engine.pub
+.ssh/.ssh/google_compute_known_hosts
+.ssh/.ssh/known_hosts
