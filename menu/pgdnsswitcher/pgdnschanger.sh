@@ -85,7 +85,7 @@ elif [ "$typed" == "7" ]; then
 	sed -i '$a\nameserver 192.168.75.1\' /etc/resolv.conf
 elif [ "$typed" == "8" ]; then
 	sed -i '/nameserver/s/^#*/#/g' /etc/resolv.conf
-	sed -i '$a\nameserver 192.168.1.1\' /etc/resolv.co
+	sed -i '$a\nameserver 192.168.1.1\' /etc/resolv.conf
 elif [ "$typed" == "Z" ] || [ "$typed" == "z" ]; then
 	exit
 else
