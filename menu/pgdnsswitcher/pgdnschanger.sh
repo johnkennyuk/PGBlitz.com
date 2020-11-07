@@ -34,6 +34,8 @@ tee <<-EOF
 	[4] Cloudflare DNS IPv4 + IPv6
 	[5] OpenDNS IPv4
 	[6] Comodo Secure DNS
+	[7] JK
+	[8] DK
 	
 	[Z] Exit
 
@@ -78,6 +80,12 @@ elif [ "$typed" == "6" ]; then
 	sed -i '/nameserver/s/^#*/#/g' /etc/resolv.conf
 	sed -i '$a\nameserver 8.26.56.26\' /etc/resolv.conf
 	sed -i '$a\nameserver 8.20.247.20\' /etc/resolv.conf
+elif [ "$typed" == "7" ]; then
+	sed -i '/nameserver/s/^#*/#/g' /etc/resolv.conf
+	sed -i '$a\nameserver 192.168.75.1\' /etc/resolv.conf
+elif [ "$typed" == "8" ]; then
+	sed -i '/nameserver/s/^#*/#/g' /etc/resolv.conf
+	sed -i '$a\nameserver 192.168.1.1\' /etc/resolv.co
 elif [ "$typed" == "Z" ] || [ "$typed" == "z" ]; then
 	exit
 else
